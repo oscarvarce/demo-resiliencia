@@ -331,7 +331,6 @@ demo-resiliencia/
 ├── demo_service.py               # Servicio demo con 6 tests de confiabilidad
 ├── PROMPTS.md                    # Este archivo — transparencia en uso de IA
 ├── README.md                     # Cómo ejecutar el demo (inglés)
-├── README_ES.md                  # Cómo ejecutar el demo (español)
 └── assessment-document.md        # Evaluación técnica completa (Secciones A-D)
 ```
 
