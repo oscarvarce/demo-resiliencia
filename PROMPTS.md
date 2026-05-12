@@ -265,7 +265,46 @@ Por favor revisa el documento completo para:
 
 Señala cualquier cosa que suene como que estoy fingiendo ser experto cuando no lo soy.
 ```
+### Prompt 12: Revisión de Calidad de Código con Claude
 
+```
+Actúa como un Senior Technical Reviewer con experiencia en sistemas
+distribuidos y patrones de resiliencia en Python.
+Tengo dos archivos que forman parte de una evaluación técnica para un
+cargo de Tech Lead:
+
+1. integration_framework.py — Framework de resiliencia reutilizable con:
+  - Retry con exponential backoff + full jitter
+  - Circuit Breaker (CLOSED/OPEN/HALF_OPEN)
+  - Bulkhead con queue
+  - IdempotencyStore con TTL
+  - Propagación de trazas W3C simplificada
+  - Logging estructurado con Trace ID
+
+2. demo_service.py — Servicio demo que simula un payment gateway
+inestable (60% errores, 20% timeouts) y ejecuta 6 tests de
+confiabilidad contra el framework.
+
+Por favor evalúa ambos archivos bajo estos criterios:
+
+1. SOLID y Clean Code: ¿Las responsabilidades están bien separadas?
+¿Hay acoplamiento innecesario? ¿Los nombres son expresivos?
+2. Mantenibilidad: ¿Puede un equipo con niveles mixtos mantener este código sin documentación adicional?
+3. Thread safety: ¿El uso de threading.Lock es suficiente para
+el propósito del demo? ¿Qué riesgos tiene en producción?
+4. Deuda técnica honesta: ¿Qué simplificaciones del demo
+serían bloqueantes en producción? Sé específico.
+5. Lo que NO debes hacer: No sugieras reescribir el framework
+completo ni agregues dependencias externas. El objetivo es que corra con Python estándar.
+
+Formato de respuesta:
+
+Fortalezas concretas (con referencias a líneas o clases específicas)
+Deuda técnica identificada (con impacto estimado)
+Máximo 3 mejoras puntuales que pueda aplicar en 30 minutos
+Veredicto: ¿Es código defendible en una entrevista técnica?
+``
+```
 ---
 
 ## Lo Que NO Hice con la IA
